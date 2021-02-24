@@ -1,0 +1,181 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+
+}
+
+body{
+  background-color: #f6f6f6;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height:4vh;
+  background-color:#276678;
+  padding: 1%;
+}
+.logo{
+  color:#f4f9f9;
+  text-transform:uppercase;
+  letter-spacing:5px;
+
+}
+
+.nav-links{
+  color:#f4f9f9;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li{
+  list-style: none;
+  font-family: 'Marck Script', cursive;
+  letter-spacing:3px;
+}
+
+/* 漢堡選單設定 */
+.burger{
+  display: none;
+}
+
+.burger div{
+  width: 25px;
+  height:3px;
+  background-color:#f4f9f9;
+  margin:5px;
+}
+/* ----------------------------------- */
+.head{
+  background-color: #a1cae2;
+  color:white;
+  text-align: center; /*文字置中*/
+  padding: 80px; /*讓文字不要那麼貼外匡，留一點距離*/
+  height: 300px;
+}
+
+h1{
+  font-weight: strong;
+  font-size: 50px;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  margin-bottom: 20px;
+}
+
+.box{
+  width: 1200px;
+  margin-left: auto; /*讓畫面置中*/
+  margin-right: auto;
+  /* border:2px solid red; */
+
+}
+
+
+
+
+/* Flexbox 排版-main樣式設定 */
+
+main{  /*容器*/
+  display: flex;  /*step1:容器要設定顯示模式為flex*/
+  justify-content: space-between;
+  /* flexbox水平對齊：容器置中,flex-start 靠左 flex-end 靠右 */
+  align-items: stretch;
+  /* flexbox垂直對齊：高度自由延展 */
+  flex-wrap: wrap;
+  /* 太多項目時自動換行 */
+
+}
+
+main>.item{  /*項目*/
+  flex:none; /*step2:項目無法自動縮放，一定要設定是否要自動縮放*/
+  width: 280px;
+  margin:12px 0;
+  background-color:#d9ecf2;
+  text-align: center;
+  height: 350px; /*固定每個區塊高度*/
+  line-height: 30px; /*文字行高*/
+}
+
+img{
+  position: relative;
+  width:  100%;
+  height: auto;
+  background-size: cover;
+}
+
+.item p{
+  margin: 3%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* -------RWD(Responsive Web Design) Setting------- */
+/* labtop 1200px > 4 col > fix size */
+/* 初始設定 */
+
+/* pad 600px~1200px > 2 col > stretch */
+@media (max-width: 1200px) {
+.head{
+  height: auto;
+}
+.box{
+  width: auto;
+  padding: 5%;
+}
+main>.item{
+  width: 45%;
+  height: auto;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+
+.nav-links{
+  width: 40%;
+}
+
+}
+
+
+/* Phone <=600px > 1 col > stretch  */
+@media (max-width: 600px) {
+body{
+  overflow-x: hidden;
+}
+main>.item{
+  width: 90%;
+}
+
+.nav-links{
+  color:#f4f9f9;
+  position: absolute;
+  right: 0;
+  top:4vh;
+  background-color: #276678;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+  /* transition: transform 0.5s ease-in; */
+}
+.nav-links li{
+  /* 透明度 */
+  opacity: 0;
+}
+
+.burger{
+  display: block;
+  cursor:pointer;
+}
+
+.nav-active{
+  transform:translateX(0%);
+}
+
+}
