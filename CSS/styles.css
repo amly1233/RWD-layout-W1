@@ -79,15 +79,15 @@ h1{
 
 main{ 
   display: flex;  
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
 main>.item{  
   flex:none;
-  width: 280px;
-  margin:12px 0;
+  width: 270px;
+  margin:12px;
   background-color:#d9ecf2;
   text-align: center;
   height: 350px; 
